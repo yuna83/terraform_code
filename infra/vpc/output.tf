@@ -1,19 +1,19 @@
 output "vpc_id" {
-  value = aws_vpc.user08-vpc.id
+  value = aws_vpc.vpc.id
 }
 
-output "user08_public01_id" {
-  value = aws_subnet.user08-public01.id
+output "public01_id" {
+  value = aws_subnet.public01.id
 }
 
-output "user08_public02_id" {
-  value = aws_subnet.user08-public02.id
+output "public02_id" {
+  value = aws_subnet.public02.id
 }
 
-output "user08_private01_id" {
-  value = aws_subnet.user08-private01.id
+output "private01_id" {
+  value = aws_subnet.private01.id
 }
 
-output "user08_private02_id" {
-  value = aws_subnet.user08-private02.id
+output "private02_id" {
+  value = aws_subnet.private02.id
 }

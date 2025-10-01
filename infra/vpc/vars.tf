@@ -22,3 +22,8 @@ variable "azs" {
   type    = list(any)
   default = ["ap-northeast-2a", "ap-northeast-2c"]
 }
+
+variable "prefix" {
+  type    = string
+  default = "user08"
+}

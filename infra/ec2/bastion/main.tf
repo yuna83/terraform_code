@@ -1,12 +1,13 @@
-resource "aws_instance" "user08-bastion" {
-  ami                    = "ami-077ad873396d76f6a" // Amazon Linux 2023 kernel-6.1
-  instance_type          = "t2.micro"
-  subnet_id              = var.public_subnet_id[0]
-  vpc_security_group_ids = ["sg-063dd176b16df0b64"] // ssh-accept 만!
-  key_name               = "user08-key"
+resource "aws_instance" "bastion" {
+  ami                         = data.aws_ami.ubuntu.id
+  instance_type               = var.instance_type
+  subnet_id                   = data.terraform_remote_state.vpc.outputs.public02_id
+  vpc_security_group_ids      = [data.terraform_remote_state.sg.outputs.ssh_sg_id] // ssh-accept 만!
+  key_name                    = var.key_name
   associate_public_ip_address = true
 
   tags = {
-    Name = "user08-bastion"
+    Name = "${var.prefix}-bastion"
   }
 }
+

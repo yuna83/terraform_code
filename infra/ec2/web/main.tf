@@ -1,4 +1,3 @@
-// 단일 WEB Server 구축
 resource "aws_instance" "user08-web" {
   ami                    = "ami-077ad873396d76f6a" // Amazon Linux 2023 kernel-6.1
   instance_type          = "t2.micro"
